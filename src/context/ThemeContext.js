@@ -3,7 +3,7 @@ import { createContext, useCallback, useContext, useMemo, useState } from "react
 
 const ThemeContext = createContext(null);
 
-const STORAGE_KEY = "untitled_theme";
+const STORAGE_KEY = "personalmetrics_theme";
 
 export function ThemeProvider({ children }) {
   const [theme, setThemeState] = useState(() => {

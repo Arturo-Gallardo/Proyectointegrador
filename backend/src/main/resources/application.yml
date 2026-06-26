@@ -1,10 +1,10 @@
 spring:
   application:
-    name: untitled-api
+    name: personalmetrics-api
   datasource:
-    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:untitled}
-    username: ${DB_USER:untitled}
-    password: ${DB_PASSWORD:untitled}
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:personalmetrics}
+    username: ${DB_USER:personalmetrics}
+    password: ${DB_PASSWORD:personalmetrics}
   jpa:
     hibernate:
       ddl-auto: update

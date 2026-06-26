@@ -37,7 +37,7 @@ export async function apiRegister(payload) {
 export async function apiFetch(path, options = {}) {
   const token =
     typeof window !== "undefined"
-      ? window.localStorage.getItem("untitled_token")
+      ? window.localStorage.getItem("personalmetrics_token")
       : null;
   const res = await fetch(`${API_BASE}${path}`, {
     ...options,

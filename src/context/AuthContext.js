@@ -10,8 +10,8 @@ import { apiLogin, apiRegister } from "api/client";
 
 const AuthContext = createContext(null);
 
-const TOKEN_KEY = "untitled_token";
-const USER_KEY = "untitled_user";
+const TOKEN_KEY = "personalmetrics_token";
+const USER_KEY = "personalmetrics_user";
 
 function readStoredUser() {
   if (typeof window === "undefined") return null;

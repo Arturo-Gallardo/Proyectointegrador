@@ -2,13 +2,13 @@ services:
   db:
     image: postgres:16-alpine
     environment:
-      POSTGRES_DB: untitled
-      POSTGRES_USER: untitled
-      POSTGRES_PASSWORD: untitled
+      POSTGRES_DB: personalmetrics
+      POSTGRES_USER: personalmetrics
+      POSTGRES_PASSWORD: personalmetrics
     ports:
       - "5432:5432"
     volumes:
-      - untitled_pg:/var/lib/postgresql/data
+      - personalmetrics_pg:/var/lib/postgresql/data
 
 volumes:
-  untitled_pg: {}
+  personalmetrics_pg: {}

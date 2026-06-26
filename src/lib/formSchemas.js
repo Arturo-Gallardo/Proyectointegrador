@@ -19,18 +19,18 @@ const EXPENSE_CATEGORY_OPTIONS = expenseCategories.map((c) => ({
 function deleteSuccess(itemLabel, entity = "registro") {
   return {
     title: "Eliminado",
-    description: `${itemLabel} se eliminó de ${entity}.`,
+    description: `${itemLabel} se eliminÃ³ de ${entity}.`,
   };
 }
 
 function editSuccess(itemLabel) {
   return {
     title: "Cambios guardados",
-    description: `${itemLabel} se actualizó correctamente.`,
+    description: `${itemLabel} se actualizÃ³ correctamente.`,
   };
 }
 
-/** Field sets and copy keyed by UI context — each action gets its own form. */
+/** Field sets and copy keyed by UI context â€” each action gets its own form. */
 export const FORM_SCHEMAS = {
   income: {
     add: {
@@ -40,14 +40,14 @@ export const FORM_SCHEMAS = {
         { id: "label", label: "Concepto", placeholder: "Concepto ejemplo", fullWidth: true },
         {
           id: "channel",
-          label: "Categoría",
+          label: "CategorÃ­a",
           type: "select",
           defaultValue: "DINE_IN",
           options: [
             { value: "DINE_IN", label: "Sueldo" },
             { value: "TAKEOUT", label: "Trabajo independiente" },
             { value: "DELIVERY", label: "Rendimientos" },
-            { value: "CATERING", label: "Venta de artículos" },
+            { value: "CATERING", label: "Venta de artÃ­culos" },
             { value: "OTHER", label: "Otro ingreso" },
           ],
         },
@@ -57,7 +57,7 @@ export const FORM_SCHEMAS = {
       submitLabel: "Guardar cambios",
       success: {
         title: "Ingreso registrado",
-        description: "El ingreso se ha registrado y ya forma parte de los cálculos financieros.",
+        description: "El ingreso se ha registrado y ya forma parte de los cÃ¡lculos financieros.",
       },
     },
     edit: (itemLabel) => ({
@@ -67,13 +67,13 @@ export const FORM_SCHEMAS = {
         { id: "label", label: "Concepto", defaultValue: itemLabel },
         {
           id: "channel",
-          label: "Categoría",
+          label: "CategorÃ­a",
           type: "select",
           options: [
             { value: "DINE_IN", label: "Sueldo" },
             { value: "TAKEOUT", label: "Trabajo independiente" },
             { value: "DELIVERY", label: "Rendimientos" },
-            { value: "CATERING", label: "Venta de artículos" },
+            { value: "CATERING", label: "Venta de artÃ­culos" },
             { value: "OTHER", label: "Otro ingreso" },
           ],
         },
@@ -83,12 +83,12 @@ export const FORM_SCHEMAS = {
       submitLabel: "Guardar cambios",
       success: {
         title: "Ingreso registrado",
-        description: "El ingreso se ha registrado y ya forma parte de los cálculos financieros.",
+        description: "El ingreso se ha registrado y ya forma parte de los cÃ¡lculos financieros.",
       },
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ingreso ${itemLabel}?`,
-      description: "Se quitará del resumen de ingresos mensual. Esta acción no se puede deshacer.",
+      title: `Â¿Eliminar ingreso ${itemLabel}?`,
+      description: "Se quitarÃ¡ del resumen de ingresos mensual. Esta acciÃ³n no se puede deshacer.",
       confirmLabel: "Eliminar ingreso",
       success: {
         title: "Ingreso eliminado",
@@ -105,7 +105,7 @@ export const FORM_SCHEMAS = {
         { id: "label", label: "Concepto", placeholder: "Concepto ejemplo" },
         {
           id: "category",
-          label: "Categoría",
+          label: "CategorÃ­a",
           type: "select",
           defaultValue: expenseCategories[0],
           options: EXPENSE_CATEGORY_OPTIONS,
@@ -124,7 +124,7 @@ export const FORM_SCHEMAS = {
       submitLabel: "Guardar cambios",
       success: {
         title: "Gasto registrado",
-        description: "El gasto se ha registrado y ya forma parte de los cálculos financieros.",
+        description: "El gasto se ha registrado y ya forma parte de los cÃ¡lculos financieros.",
       },
     },
     edit: (itemLabel) => ({
@@ -134,7 +134,7 @@ export const FORM_SCHEMAS = {
         { id: "label", label: "Concepto", defaultValue: itemLabel },
         {
           id: "category",
-          label: "Categoría",
+          label: "CategorÃ­a",
           type: "select",
           defaultValue: expenseCategories[0],
           options: EXPENSE_CATEGORY_OPTIONS,
@@ -153,12 +153,12 @@ export const FORM_SCHEMAS = {
       submitLabel: "Guardar cambios",
       success: {
         title: "Gasto registrado",
-        description: "El gasto se ha registrado y ya forma parte de los cálculos financieros.",
+        description: "El gasto se ha registrado y ya forma parte de los cÃ¡lculos financieros.",
       },
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar gasto ${itemLabel}?`,
-      description: "Se quitará del resumen de gastos mensuales. Esta acción no se puede deshacer.",
+      title: `Â¿Eliminar gasto ${itemLabel}?`,
+      description: "Se quitarÃ¡ del resumen de gastos mensuales. Esta acciÃ³n no se puede deshacer.",
       confirmLabel: "Eliminar gasto",
       success: {
         title: "Gasto eliminado",
@@ -170,13 +170,13 @@ export const FORM_SCHEMAS = {
   supplier: {
     add: {
       title: "Agregar proveedor",
-      description: "Añade un contacto al directorio de proveedores.",
+      description: "AÃ±ade un contacto al directorio de proveedores.",
       fields: [
         { id: "name", label: "Nombre", placeholder: "Mariscos Costa" },
         { id: "products", label: "Productos", placeholder: "Mariscos, pescado fresco" },
         { id: "email", label: "Correo", type: "email", placeholder: "pedidos@mariscos.com" },
-        { id: "phone", label: "Teléfono", placeholder: "+52 55 1234 5678" },
-        { id: "paymentTerms", label: "Plazo de pago (días)", type: "number", min: "0", placeholder: "30" },
+        { id: "phone", label: "TelÃ©fono", placeholder: "+52 55 1234 5678" },
+        { id: "paymentTerms", label: "Plazo de pago (dÃ­as)", type: "number", min: "0", placeholder: "30" },
       ],
       submitLabel: "Guardar proveedor",
       success: {
@@ -190,15 +190,15 @@ export const FORM_SCHEMAS = {
         { id: "name", label: "Nombre", defaultValue: itemLabel },
         { id: "products", label: "Productos", placeholder: "Mariscos, pescado fresco" },
         { id: "email", label: "Correo", type: "email" },
-        { id: "phone", label: "Teléfono" },
-        { id: "paymentTerms", label: "Plazo de pago (días)", type: "number", min: "0" },
+        { id: "phone", label: "TelÃ©fono" },
+        { id: "paymentTerms", label: "Plazo de pago (dÃ­as)", type: "number", min: "0" },
       ],
       submitLabel: "Actualizar proveedor",
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ${itemLabel}?`,
-      description: "Se eliminará del directorio junto con su historial de contacto.",
+      title: `Â¿Eliminar ${itemLabel}?`,
+      description: "Se eliminarÃ¡ del directorio junto con su historial de contacto.",
       success: deleteSuccess(itemLabel, "proveedores"),
     }),
   },
@@ -206,19 +206,19 @@ export const FORM_SCHEMAS = {
   supplierActiveSummary: {
     edit: () => ({
       title: "Editar meta de proveedores",
-      description: "Define cuántos proveedores activos quieres mantener.",
+      description: "Define cuÃ¡ntos proveedores activos quieres mantener.",
       fields: [
         { id: "targetCount", label: "Meta de proveedores activos", type: "number", min: "1" },
         { id: "notes", label: "Notas", type: "textarea", placeholder: "Ej. priorizar proveedores locales" },
       ],
       submitLabel: "Guardar meta",
-      success: { title: "Meta actualizada", description: "El panel reflejará la nueva meta de proveedores." },
+      success: { title: "Meta actualizada", description: "El panel reflejarÃ¡ la nueva meta de proveedores." },
     }),
     delete: () => ({
-      title: "¿Restablecer meta de proveedores?",
-      description: "Volverás al valor calculado automáticamente.",
+      title: "Â¿Restablecer meta de proveedores?",
+      description: "VolverÃ¡s al valor calculado automÃ¡ticamente.",
       confirmLabel: "Restablecer",
-      success: { title: "Meta restablecida", description: "Se usa de nuevo el conteo automático." },
+      success: { title: "Meta restablecida", description: "Se usa de nuevo el conteo automÃ¡tico." },
     }),
   },
 
@@ -226,17 +226,17 @@ export const FORM_SCHEMAS = {
     edit: () => ({
       title: "Editar ventana de cuentas por pagar",
       fields: [
-        { id: "periodDays", label: "Días a considerar", type: "number", min: "7", defaultValue: "30" },
+        { id: "periodDays", label: "DÃ­as a considerar", type: "number", min: "7", defaultValue: "30" },
         { id: "alertThreshold", label: "Alerta si supera (USD)", type: "number", min: "0", step: "100" },
       ],
-      submitLabel: "Guardar configuración",
-      success: { title: "Configuración guardada", description: "El total de cuentas por pagar usará estos parámetros." },
+      submitLabel: "Guardar configuraciÃ³n",
+      success: { title: "ConfiguraciÃ³n guardada", description: "El total de cuentas por pagar usarÃ¡ estos parÃ¡metros." },
     }),
     delete: () => ({
-      title: "¿Restablecer cuentas por pagar?",
-      description: "Se volverá al cálculo estándar de 30 días.",
+      title: "Â¿Restablecer cuentas por pagar?",
+      description: "Se volverÃ¡ al cÃ¡lculo estÃ¡ndar de 30 dÃ­as.",
       confirmLabel: "Restablecer",
-      success: { title: "Restablecido", description: "El panel muestra de nuevo el periodo de 30 días." },
+      success: { title: "Restablecido", description: "El panel muestra de nuevo el periodo de 30 dÃ­as." },
     }),
   },
 
@@ -244,17 +244,17 @@ export const FORM_SCHEMAS = {
     edit: () => ({
       title: "Editar recordatorios de reorden",
       fields: [
-        { id: "lookaheadDays", label: "Anticipación (días)", type: "number", min: "1", defaultValue: "14" },
-        { id: "minAlerts", label: "Mínimo de alertas visibles", type: "number", min: "1" },
+        { id: "lookaheadDays", label: "AnticipaciÃ³n (dÃ­as)", type: "number", min: "1", defaultValue: "14" },
+        { id: "minAlerts", label: "MÃ­nimo de alertas visibles", type: "number", min: "1" },
       ],
       submitLabel: "Guardar reglas",
-      success: { title: "Reglas guardadas", description: "Los recordatorios seguirán estos criterios." },
+      success: { title: "Reglas guardadas", description: "Los recordatorios seguirÃ¡n estos criterios." },
     }),
     delete: () => ({
-      title: "¿Restablecer recordatorios?",
-      description: "Se usarán las reglas heurísticas predeterminadas.",
+      title: "Â¿Restablecer recordatorios?",
+      description: "Se usarÃ¡n las reglas heurÃ­sticas predeterminadas.",
       confirmLabel: "Restablecer",
-      success: { title: "Restablecido", description: "Los recordatorios vuelven a la configuración base." },
+      success: { title: "Restablecido", description: "Los recordatorios vuelven a la configuraciÃ³n base." },
     }),
   },
 
@@ -279,12 +279,12 @@ export const FORM_SCHEMAS = {
             { value: "latas", label: "Latas" },
           ],
         },
-        { id: "reorderAt", label: "Nivel mínimo", type: "number", min: "0" },
+        { id: "reorderAt", label: "Nivel mÃ­nimo", type: "number", min: "0" },
         { id: "unitCost", label: "Costo unitario (USD)", type: "number", min: "0", step: "0.01" },
         { id: "expiresOn", label: "Fecha de caducidad", type: "date" },
       ],
       submitLabel: "Guardar ingrediente",
-      success: { title: "Ingrediente agregado", description: "Aparecerá en el registro y en las alertas de stock." },
+      success: { title: "Ingrediente agregado", description: "AparecerÃ¡ en el registro y en las alertas de stock." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
@@ -304,7 +304,7 @@ export const FORM_SCHEMAS = {
             { value: "latas", label: "Latas" },
           ],
         },
-        { id: "reorderAt", label: "Nivel mínimo", type: "number", min: "0" },
+        { id: "reorderAt", label: "Nivel mÃ­nimo", type: "number", min: "0" },
         { id: "unitCost", label: "Costo unitario (USD)", type: "number", min: "0", step: "0.01" },
         { id: "expiresOn", label: "Fecha de caducidad", type: "date" },
       ],
@@ -312,15 +312,15 @@ export const FORM_SCHEMAS = {
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ${itemLabel}?`,
-      description: "Se quitará del inventario y dejará de generar alertas.",
+      title: `Â¿Eliminar ${itemLabel}?`,
+      description: "Se quitarÃ¡ del inventario y dejarÃ¡ de generar alertas.",
       success: deleteSuccess(itemLabel, "inventario"),
     }),
   },
 
   inventorySeries: {
     add: {
-      title: "Agregar serie al gráfico",
+      title: "Agregar serie al grÃ¡fico",
       description: "Compara disponible vs. objetivo de reorden.",
       fields: [
         { id: "label", label: "Etiqueta", placeholder: "Tomate" },
@@ -328,7 +328,7 @@ export const FORM_SCHEMAS = {
         { id: "par", label: "Reorden en", type: "number", min: "0" },
       ],
       submitLabel: "Agregar serie",
-      success: { title: "Serie agregada", description: "El gráfico incluirá la nueva barra." },
+      success: { title: "Serie agregada", description: "El grÃ¡fico incluirÃ¡ la nueva barra." },
     },
     edit: (itemLabel) => ({
       title: `Editar serie ${itemLabel}`,
@@ -341,9 +341,9 @@ export const FORM_SCHEMAS = {
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Quitar ${itemLabel} del gráfico?`,
-      description: "La serie dejará de mostrarse en la comparativa.",
-      success: deleteSuccess(itemLabel, "el gráfico"),
+      title: `Â¿Quitar ${itemLabel} del grÃ¡fico?`,
+      description: "La serie dejarÃ¡ de mostrarse en la comparativa.",
+      success: deleteSuccess(itemLabel, "el grÃ¡fico"),
     }),
   },
 
@@ -370,18 +370,18 @@ export const FORM_SCHEMAS = {
           type: "select",
           defaultValue: "warning",
           options: [
-            { value: "critical", label: "Crítico" },
+            { value: "critical", label: "CrÃ­tico" },
             { value: "warning", label: "Advertencia" },
-            { value: "info", label: "Información" },
+            { value: "info", label: "InformaciÃ³n" },
           ],
         },
-        { id: "message", label: "Mensaje", type: "textarea", placeholder: "Describe el riesgo o la acción sugerida" },
+        { id: "message", label: "Mensaje", type: "textarea", placeholder: "Describe el riesgo o la acciÃ³n sugerida" },
       ],
       submitLabel: "Crear alerta",
-      success: { title: "Alerta creada", description: "Aparecerá en el flujo de alertas abiertas." },
+      success: { title: "Alerta creada", description: "AparecerÃ¡ en el flujo de alertas abiertas." },
     },
     edit: (itemLabel) => ({
-      title: `Editar alerta — ${itemLabel}`,
+      title: `Editar alerta â€” ${itemLabel}`,
       fields: [
         {
           id: "severity",
@@ -389,9 +389,9 @@ export const FORM_SCHEMAS = {
           type: "select",
           defaultValue: "warning",
           options: [
-            { value: "critical", label: "Crítico" },
+            { value: "critical", label: "CrÃ­tico" },
             { value: "warning", label: "Advertencia" },
-            { value: "info", label: "Información" },
+            { value: "info", label: "InformaciÃ³n" },
           ],
         },
         { id: "message", label: "Mensaje", type: "textarea" },
@@ -411,8 +411,8 @@ export const FORM_SCHEMAS = {
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar alerta de ${itemLabel}?`,
-      description: "Desaparecerá del flujo de alertas abiertas.",
+      title: `Â¿Eliminar alerta de ${itemLabel}?`,
+      description: "DesaparecerÃ¡ del flujo de alertas abiertas.",
       success: deleteSuccess(itemLabel, "alertas"),
     }),
   },
@@ -420,11 +420,11 @@ export const FORM_SCHEMAS = {
   dashboardKpi: {
     add: {
       title: "Agregar indicador",
-      description: "Añade un KPI personalizado al panel.",
+      description: "AÃ±ade un KPI personalizado al panel.",
       fields: [
         { id: "title", label: "Nombre del indicador", placeholder: "Ticket promedio" },
         { id: "value", label: "Valor", placeholder: "$45.00" },
-        { id: "hint", label: "Descripción breve", type: "textarea", placeholder: "Promedio por comanda en sala" },
+        { id: "hint", label: "DescripciÃ³n breve", type: "textarea", placeholder: "Promedio por comanda en sala" },
       ],
       submitLabel: "Agregar indicador",
       success: { title: "Indicador agregado", description: "Ya se muestra en tu panel principal." },
@@ -434,14 +434,14 @@ export const FORM_SCHEMAS = {
       fields: [
         { id: "title", label: "Nombre", defaultValue: itemLabel },
         { id: "value", label: "Valor", placeholder: "$0.00" },
-        { id: "hint", label: "Descripción breve", type: "textarea" },
+        { id: "hint", label: "DescripciÃ³n breve", type: "textarea" },
       ],
       submitLabel: "Guardar cambios",
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ${itemLabel}?`,
-      description: "El indicador dejará de mostrarse en el panel.",
+      title: `Â¿Eliminar ${itemLabel}?`,
+      description: "El indicador dejarÃ¡ de mostrarse en el panel.",
       success: deleteSuccess(itemLabel, "el panel"),
     }),
   },
@@ -456,7 +456,7 @@ export const FORM_SCHEMAS = {
         { id: "expenses", label: "Gastos (USD)", type: "number", min: "0" },
       ],
       submitLabel: "Agregar mes",
-      success: { title: "Mes agregado", description: "La curva de ingresos vs. gastos se actualizó." },
+      success: { title: "Mes agregado", description: "La curva de ingresos vs. gastos se actualizÃ³." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
@@ -469,34 +469,34 @@ export const FORM_SCHEMAS = {
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar datos de ${itemLabel}?`,
-      description: "Ese mes dejará de aparecer en el gráfico.",
-      success: deleteSuccess(itemLabel, "el gráfico"),
+      title: `Â¿Eliminar datos de ${itemLabel}?`,
+      description: "Ese mes dejarÃ¡ de aparecer en el grÃ¡fico.",
+      success: deleteSuccess(itemLabel, "el grÃ¡fico"),
     }),
   },
 
   dashboardCategory: {
     add: {
-      title: "Agregar categoría de gasto",
+      title: "Agregar categorÃ­a de gasto",
       fields: [
-        { id: "name", label: "Categoría", placeholder: "Marketing" },
+        { id: "name", label: "CategorÃ­a", placeholder: "Marketing" },
         { id: "value", label: "Monto mensual (USD)", type: "number", min: "0" },
       ],
-      submitLabel: "Agregar categoría",
-      success: { title: "Categoría agregada", description: "Aparecerá en el desglose de gastos." },
+      submitLabel: "Agregar categorÃ­a",
+      success: { title: "CategorÃ­a agregada", description: "AparecerÃ¡ en el desglose de gastos." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
       fields: [
-        { id: "name", label: "Categoría", defaultValue: itemLabel },
+        { id: "name", label: "CategorÃ­a", defaultValue: itemLabel },
         { id: "value", label: "Monto mensual (USD)", type: "number", min: "0" },
       ],
-      submitLabel: "Actualizar categoría",
+      submitLabel: "Actualizar categorÃ­a",
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ${itemLabel}?`,
-      description: "Se quitará del gráfico de distribución de gastos.",
+      title: `Â¿Eliminar ${itemLabel}?`,
+      description: "Se quitarÃ¡ del grÃ¡fico de distribuciÃ³n de gastos.",
       success: deleteSuccess(itemLabel, "gastos"),
     }),
   },
@@ -505,27 +505,27 @@ export const FORM_SCHEMAS = {
     add: {
       title: "Agregar alerta de stock",
       fields: [
-        { id: "item", label: "Artículo", placeholder: "Aceite de oliva" },
+        { id: "item", label: "ArtÃ­culo", placeholder: "Aceite de oliva" },
         { id: "qty", label: "En stock", type: "number", min: "0" },
         { id: "unit", label: "Unidad", placeholder: "L" },
-        { id: "threshold", label: "Mínimo recomendado", type: "number", min: "0" },
+        { id: "threshold", label: "MÃ­nimo recomendado", type: "number", min: "0" },
       ],
       submitLabel: "Agregar alerta",
-      success: { title: "Alerta agregada", description: "Se mostrará en productos por acabarse." },
+      success: { title: "Alerta agregada", description: "Se mostrarÃ¡ en productos por acabarse." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
       fields: [
-        { id: "item", label: "Artículo", defaultValue: itemLabel },
+        { id: "item", label: "ArtÃ­culo", defaultValue: itemLabel },
         { id: "qty", label: "En stock", type: "number", min: "0" },
         { id: "unit", label: "Unidad", placeholder: "kg" },
-        { id: "threshold", label: "Mínimo recomendado", type: "number", min: "0" },
+        { id: "threshold", label: "MÃ­nimo recomendado", type: "number", min: "0" },
       ],
       submitLabel: "Actualizar alerta",
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar alerta de ${itemLabel}?`,
+      title: `Â¿Eliminar alerta de ${itemLabel}?`,
       success: deleteSuccess(itemLabel, "alertas de stock"),
     }),
   },
@@ -539,10 +539,10 @@ export const FORM_SCHEMAS = {
         { id: "amount", label: "Monto (MXN)", type: "number", min: "0", step: "0.01" },
       ],
       submitLabel: "Agregar recordatorio",
-      success: { title: "Recordatorio agregado", description: "Aparecerá en pagos a proveedores." },
+      success: { title: "Recordatorio agregado", description: "AparecerÃ¡ en pagos a proveedores." },
     },
     edit: (itemLabel) => ({
-      title: `Editar pago — ${itemLabel}`,
+      title: `Editar pago â€” ${itemLabel}`,
       fields: [
         { id: "supplier", label: "Proveedor", defaultValue: itemLabel },
         { id: "due", label: "Fecha de vencimiento", placeholder: "2026-05-22" },
@@ -552,7 +552,7 @@ export const FORM_SCHEMAS = {
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar recordatorio de ${itemLabel}?`,
+      title: `Â¿Eliminar recordatorio de ${itemLabel}?`,
       success: deleteSuccess(itemLabel, "recordatorios"),
     }),
   },
@@ -563,23 +563,23 @@ export const FORM_SCHEMAS = {
       fields: [
         { id: "name", label: "Concepto", placeholder: "Renta del local" },
         { id: "monthlyAmount", label: "Monto mensual (USD)", type: "number", min: "0" },
-        { id: "category", label: "Categoría", placeholder: "Operación" },
+        { id: "category", label: "CategorÃ­a", placeholder: "OperaciÃ³n" },
       ],
       submitLabel: "Agregar costo",
-      success: { title: "Costo fijo agregado", description: "Se incluirá en el cálculo de equilibrio." },
+      success: { title: "Costo fijo agregado", description: "Se incluirÃ¡ en el cÃ¡lculo de equilibrio." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
       fields: [
         { id: "name", label: "Concepto", defaultValue: itemLabel },
         { id: "monthlyAmount", label: "Monto mensual (USD)", type: "number", min: "0" },
-        { id: "category", label: "Categoría" },
+        { id: "category", label: "CategorÃ­a" },
       ],
       submitLabel: "Actualizar costo",
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ${itemLabel}?`,
+      title: `Â¿Eliminar ${itemLabel}?`,
       success: deleteSuccess(itemLabel, "costos fijos"),
     }),
   },
@@ -592,7 +592,7 @@ export const FORM_SCHEMAS = {
         { id: "percentage", label: "Porcentaje de ventas", type: "number", min: "0", max: "100", step: "0.1" },
       ],
       submitLabel: "Agregar factor",
-      success: { title: "Factor agregado", description: "Afectará el ratio de costo variable." },
+      success: { title: "Factor agregado", description: "AfectarÃ¡ el ratio de costo variable." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
@@ -604,7 +604,7 @@ export const FORM_SCHEMAS = {
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ${itemLabel}?`,
+      title: `Â¿Eliminar ${itemLabel}?`,
       success: deleteSuccess(itemLabel, "factores variables"),
     }),
   },
@@ -618,7 +618,7 @@ export const FORM_SCHEMAS = {
         { id: "notes", label: "Notas", type: "textarea" },
       ],
       submitLabel: "Agregar regla",
-      success: { title: "Regla agregada", description: "Se usará para comparar contra ingresos reales." },
+      success: { title: "Regla agregada", description: "Se usarÃ¡ para comparar contra ingresos reales." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
@@ -631,7 +631,7 @@ export const FORM_SCHEMAS = {
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ${itemLabel}?`,
+      title: `Â¿Eliminar ${itemLabel}?`,
       success: deleteSuccess(itemLabel, "reglas de ingreso"),
     }),
   },
@@ -642,23 +642,23 @@ export const FORM_SCHEMAS = {
       fields: [
         { id: "label", label: "Segmento", placeholder: "Cena fin de semana" },
         { id: "avgTicket", label: "Ticket promedio (USD)", type: "number", min: "0", step: "0.01" },
-        { id: "ordersPerDay", label: "Pedidos por día", type: "number", min: "0" },
+        { id: "ordersPerDay", label: "Pedidos por dÃ­a", type: "number", min: "0" },
       ],
       submitLabel: "Agregar nivel",
-      success: { title: "Nivel agregado", description: "Se incluirá en el cálculo de pedidos necesarios." },
+      success: { title: "Nivel agregado", description: "Se incluirÃ¡ en el cÃ¡lculo de pedidos necesarios." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
       fields: [
         { id: "label", label: "Segmento", defaultValue: itemLabel },
         { id: "avgTicket", label: "Ticket promedio (USD)", type: "number", min: "0", step: "0.01" },
-        { id: "ordersPerDay", label: "Pedidos por día", type: "number", min: "0" },
+        { id: "ordersPerDay", label: "Pedidos por dÃ­a", type: "number", min: "0" },
       ],
       submitLabel: "Actualizar nivel",
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ${itemLabel}?`,
+      title: `Â¿Eliminar ${itemLabel}?`,
       success: deleteSuccess(itemLabel, "niveles de ticket"),
     }),
   },
@@ -672,7 +672,7 @@ export const FORM_SCHEMAS = {
         { id: "endDate", label: "Fin", placeholder: "2026-06-08" },
       ],
       submitLabel: "Agregar semana",
-      success: { title: "Semana agregada", description: "Podrás registrar ingresos diarios para ese periodo." },
+      success: { title: "Semana agregada", description: "PodrÃ¡s registrar ingresos diarios para ese periodo." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
@@ -685,62 +685,62 @@ export const FORM_SCHEMAS = {
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ${itemLabel}?`,
+      title: `Â¿Eliminar ${itemLabel}?`,
       success: deleteSuccess(itemLabel, "semanas"),
     }),
   },
 
   breakEvenChartPoint: {
     add: {
-      title: "Agregar punto al gráfico",
+      title: "Agregar punto al grÃ¡fico",
       fields: [
-        { id: "day", label: "Día", placeholder: "Lun" },
+        { id: "day", label: "DÃ­a", placeholder: "Lun" },
         { id: "revenue", label: "Ingresos reales (USD)", type: "number", min: "0" },
-        { id: "target", label: "Línea de equilibrio (USD)", type: "number", min: "0" },
+        { id: "target", label: "LÃ­nea de equilibrio (USD)", type: "number", min: "0" },
       ],
       submitLabel: "Agregar punto",
-      success: { title: "Punto agregado", description: "El gráfico semanal se actualizó." },
+      success: { title: "Punto agregado", description: "El grÃ¡fico semanal se actualizÃ³." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
       fields: [
-        { id: "day", label: "Día", defaultValue: itemLabel },
+        { id: "day", label: "DÃ­a", defaultValue: itemLabel },
         { id: "revenue", label: "Ingresos reales (USD)", type: "number", min: "0" },
-        { id: "target", label: "Línea de equilibrio (USD)", type: "number", min: "0" },
+        { id: "target", label: "LÃ­nea de equilibrio (USD)", type: "number", min: "0" },
       ],
       submitLabel: "Actualizar punto",
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ${itemLabel}?`,
-      success: deleteSuccess(itemLabel, "el gráfico"),
+      title: `Â¿Eliminar ${itemLabel}?`,
+      success: deleteSuccess(itemLabel, "el grÃ¡fico"),
     }),
   },
 
   forecastMonth: {
     add: {
-      title: "Agregar mes de pronóstico",
+      title: "Agregar mes de pronÃ³stico",
       fields: [
         { id: "month", label: "Mes", type: "select", options: MONTHS, defaultValue: "Jul" },
         { id: "revenueForecast", label: "Ingresos proyectados (USD)", type: "number", min: "0" },
         { id: "expenseForecast", label: "Gastos proyectados (USD)", type: "number", min: "0" },
       ],
-      submitLabel: "Agregar pronóstico",
-      success: { title: "Pronóstico agregado", description: "La curva incluirá el nuevo mes proyectado." },
+      submitLabel: "Agregar pronÃ³stico",
+      success: { title: "PronÃ³stico agregado", description: "La curva incluirÃ¡ el nuevo mes proyectado." },
     },
     edit: (itemLabel) => ({
-      title: `Editar pronóstico — ${itemLabel}`,
+      title: `Editar pronÃ³stico â€” ${itemLabel}`,
       fields: [
         { id: "month", label: "Mes", type: "select", options: MONTHS, defaultValue: itemLabel },
         { id: "revenueForecast", label: "Ingresos proyectados (USD)", type: "number", min: "0" },
         { id: "expenseForecast", label: "Gastos proyectados (USD)", type: "number", min: "0" },
       ],
-      submitLabel: "Actualizar pronóstico",
+      submitLabel: "Actualizar pronÃ³stico",
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar pronóstico de ${itemLabel}?`,
-      success: deleteSuccess(itemLabel, "pronósticos"),
+      title: `Â¿Eliminar pronÃ³stico de ${itemLabel}?`,
+      success: deleteSuccess(itemLabel, "pronÃ³sticos"),
     }),
   },
 
@@ -751,10 +751,10 @@ export const FORM_SCHEMAS = {
         { id: "name", label: "Nombre del escenario", placeholder: "Temporada alta" },
         { id: "revenueAdjust", label: "Ajuste de ingresos (%)", type: "number", step: "1", placeholder: "10" },
         { id: "expenseAdjust", label: "Ajuste de gastos (%)", type: "number", step: "1", placeholder: "-5" },
-        { id: "notes", label: "Supuestos", type: "textarea", placeholder: "Más turismo, mismo personal" },
+        { id: "notes", label: "Supuestos", type: "textarea", placeholder: "MÃ¡s turismo, mismo personal" },
       ],
       submitLabel: "Guardar escenario",
-      success: { title: "Escenario guardado", description: "Podrás compararlo contra el pronóstico base." },
+      success: { title: "Escenario guardado", description: "PodrÃ¡s compararlo contra el pronÃ³stico base." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
@@ -768,7 +768,7 @@ export const FORM_SCHEMAS = {
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar escenario ${itemLabel}?`,
+      title: `Â¿Eliminar escenario ${itemLabel}?`,
       success: deleteSuccess(itemLabel, "escenarios"),
     }),
   },
@@ -778,63 +778,63 @@ export const FORM_SCHEMAS = {
       title: "Agregar regla de uso",
       fields: [
         { id: "ingredient", label: "Ingrediente", placeholder: "Salmon" },
-        { id: "leadDays", label: "Días de anticipación", type: "number", min: "1" },
+        { id: "leadDays", label: "DÃ­as de anticipaciÃ³n", type: "number", min: "1" },
         { id: "threshold", label: "Umbral de alerta", type: "number", min: "0" },
       ],
       submitLabel: "Guardar regla",
-      success: { title: "Regla guardada", description: "El pronóstico de inventario usará estos parámetros." },
+      success: { title: "Regla guardada", description: "El pronÃ³stico de inventario usarÃ¡ estos parÃ¡metros." },
     },
     edit: (itemLabel) => ({
-      title: `Editar regla — ${itemLabel}`,
+      title: `Editar regla â€” ${itemLabel}`,
       fields: [
         { id: "ingredient", label: "Ingrediente", defaultValue: itemLabel },
-        { id: "leadDays", label: "Días de anticipación", type: "number", min: "1" },
+        { id: "leadDays", label: "DÃ­as de anticipaciÃ³n", type: "number", min: "1" },
         { id: "threshold", label: "Umbral de alerta", type: "number", min: "0" },
       ],
       submitLabel: "Actualizar regla",
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar regla de ${itemLabel}?`,
+      title: `Â¿Eliminar regla de ${itemLabel}?`,
       success: deleteSuccess(itemLabel, "reglas de uso"),
     }),
   },
 
   forecastAnomalyRule: {
     add: {
-      title: "Agregar regla de anomalía",
+      title: "Agregar regla de anomalÃ­a",
       fields: [
         {
           id: "category",
-          label: "Categoría de gasto",
+          label: "CategorÃ­a de gasto",
           type: "select",
           defaultValue: expenseCategories[0],
           options: EXPENSE_CATEGORY_OPTIONS,
         },
-        { id: "stdDevThreshold", label: "Desviaciones estándar", type: "number", min: "1", step: "0.5", defaultValue: "2" },
+        { id: "stdDevThreshold", label: "Desviaciones estÃ¡ndar", type: "number", min: "1", step: "0.5", defaultValue: "2" },
         { id: "notifyEmail", label: "Notificar a", type: "email", placeholder: "gerencia@restaurante.com" },
       ],
       submitLabel: "Guardar regla",
-      success: { title: "Regla guardada", description: "Recibirás alertas cuando un gasto supere el umbral." },
+      success: { title: "Regla guardada", description: "RecibirÃ¡s alertas cuando un gasto supere el umbral." },
     },
     edit: (itemLabel) => ({
-      title: `Editar regla — ${itemLabel}`,
+      title: `Editar regla â€” ${itemLabel}`,
       fields: [
         {
           id: "category",
-          label: "Categoría de gasto",
+          label: "CategorÃ­a de gasto",
           type: "select",
           options: EXPENSE_CATEGORY_OPTIONS,
         },
-        { id: "stdDevThreshold", label: "Desviaciones estándar", type: "number", min: "1", step: "0.5" },
+        { id: "stdDevThreshold", label: "Desviaciones estÃ¡ndar", type: "number", min: "1", step: "0.5" },
         { id: "notifyEmail", label: "Notificar a", type: "email" },
       ],
       submitLabel: "Actualizar regla",
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar regla de ${itemLabel}?`,
-      success: deleteSuccess(itemLabel, "reglas de anomalía"),
+      title: `Â¿Eliminar regla de ${itemLabel}?`,
+      success: deleteSuccess(itemLabel, "reglas de anomalÃ­a"),
     }),
   },
 
@@ -842,17 +842,17 @@ export const FORM_SCHEMAS = {
     add: {
       title: "Agregar nota de margen",
       fields: [
-        { id: "title", label: "Título", placeholder: "Margen estable en Q2" },
+        { id: "title", label: "TÃ­tulo", placeholder: "Margen estable en Q2" },
         { id: "body", label: "Nota", type: "textarea", placeholder: "El margen se mantuvo por encima del 20%..." },
         { id: "month", label: "Mes de referencia", type: "select", options: MONTHS },
       ],
       submitLabel: "Guardar nota",
-      success: { title: "Nota guardada", description: "Quedó registrada en el espacio de análisis." },
+      success: { title: "Nota guardada", description: "QuedÃ³ registrada en el espacio de anÃ¡lisis." },
     },
     edit: (itemLabel) => ({
-      title: `Editar nota — ${itemLabel}`,
+      title: `Editar nota â€” ${itemLabel}`,
       fields: [
-        { id: "title", label: "Título", defaultValue: itemLabel },
+        { id: "title", label: "TÃ­tulo", defaultValue: itemLabel },
         { id: "body", label: "Nota", type: "textarea" },
         { id: "month", label: "Mes de referencia", type: "select", options: MONTHS },
       ],
@@ -860,61 +860,61 @@ export const FORM_SCHEMAS = {
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar nota ${itemLabel}?`,
+      title: `Â¿Eliminar nota ${itemLabel}?`,
       success: deleteSuccess(itemLabel, "notas"),
     }),
   },
 
   analyticsObservation: {
     add: {
-      title: "Agregar observación",
+      title: "Agregar observaciÃ³n",
       fields: [
-        { id: "title", label: "Título", placeholder: "Gastos bajo control" },
-        { id: "body", label: "Observación", type: "textarea", placeholder: "Los gastos crecieron más lento que los ingresos..." },
+        { id: "title", label: "TÃ­tulo", placeholder: "Gastos bajo control" },
+        { id: "body", label: "ObservaciÃ³n", type: "textarea", placeholder: "Los gastos crecieron mÃ¡s lento que los ingresos..." },
       ],
-      submitLabel: "Guardar observación",
-      success: { title: "Observación guardada", description: "Visible en el panel de análisis." },
+      submitLabel: "Guardar observaciÃ³n",
+      success: { title: "ObservaciÃ³n guardada", description: "Visible en el panel de anÃ¡lisis." },
     },
     edit: (itemLabel) => ({
-      title: `Editar observación`,
+      title: `Editar observaciÃ³n`,
       fields: [
-        { id: "title", label: "Título", defaultValue: itemLabel },
-        { id: "body", label: "Observación", type: "textarea" },
+        { id: "title", label: "TÃ­tulo", defaultValue: itemLabel },
+        { id: "body", label: "ObservaciÃ³n", type: "textarea" },
       ],
-      submitLabel: "Actualizar observación",
+      submitLabel: "Actualizar observaciÃ³n",
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar esta observación?`,
-      description: "Dejará de mostrarse en el panel de análisis.",
-      success: deleteSuccess(itemLabel || "La observación", "análisis"),
+      title: `Â¿Eliminar esta observaciÃ³n?`,
+      description: "DejarÃ¡ de mostrarse en el panel de anÃ¡lisis.",
+      success: deleteSuccess(itemLabel || "La observaciÃ³n", "anÃ¡lisis"),
     }),
   },
 
   analyticsPolicy: {
     add: {
-      title: "Agregar política",
+      title: "Agregar polÃ­tica",
       fields: [
         { id: "name", label: "Nombre", placeholder: "Pagos a proveedores" },
-        { id: "description", label: "Descripción", type: "textarea", placeholder: "Alinear lotes de cuentas por pagar..." },
+        { id: "description", label: "DescripciÃ³n", type: "textarea", placeholder: "Alinear lotes de cuentas por pagar..." },
         { id: "effectiveDate", label: "Vigente desde", placeholder: "2026-06-01" },
       ],
-      submitLabel: "Guardar política",
-      success: { title: "Política guardada", description: "El equipo verá la nueva directriz de efectivo." },
+      submitLabel: "Guardar polÃ­tica",
+      success: { title: "PolÃ­tica guardada", description: "El equipo verÃ¡ la nueva directriz de efectivo." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
       fields: [
         { id: "name", label: "Nombre", defaultValue: itemLabel },
-        { id: "description", label: "Descripción", type: "textarea" },
+        { id: "description", label: "DescripciÃ³n", type: "textarea" },
         { id: "effectiveDate", label: "Vigente desde", placeholder: "2026-06-01" },
       ],
-      submitLabel: "Actualizar política",
+      submitLabel: "Actualizar polÃ­tica",
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ${itemLabel}?`,
-      success: deleteSuccess(itemLabel, "políticas"),
+      title: `Â¿Eliminar ${itemLabel}?`,
+      success: deleteSuccess(itemLabel, "polÃ­ticas"),
     }),
   },
 
@@ -926,7 +926,7 @@ export const FORM_SCHEMAS = {
         { id: "margin", label: "Margen neto (%)", type: "number", step: "0.1" },
       ],
       submitLabel: "Agregar mes",
-      success: { title: "Mes agregado", description: "La tendencia de margen incluirá el nuevo dato." },
+      success: { title: "Mes agregado", description: "La tendencia de margen incluirÃ¡ el nuevo dato." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
@@ -938,7 +938,7 @@ export const FORM_SCHEMAS = {
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ${itemLabel}?`,
+      title: `Â¿Eliminar ${itemLabel}?`,
       success: deleteSuccess(itemLabel, "la tendencia"),
     }),
   },
@@ -952,7 +952,7 @@ export const FORM_SCHEMAS = {
         { id: "note", label: "Comentario", placeholder: "Pico por temporada" },
       ],
       submitLabel: "Agregar punto",
-      success: { title: "Punto agregado", description: "El gráfico de margen se actualizó." },
+      success: { title: "Punto agregado", description: "El grÃ¡fico de margen se actualizÃ³." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
@@ -965,8 +965,8 @@ export const FORM_SCHEMAS = {
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ${itemLabel}?`,
-      success: deleteSuccess(itemLabel, "el gráfico"),
+      title: `Â¿Eliminar ${itemLabel}?`,
+      success: deleteSuccess(itemLabel, "el grÃ¡fico"),
     }),
   },
 
@@ -975,14 +975,14 @@ export const FORM_SCHEMAS = {
       title: "Agregar miembro del equipo",
       fields: [
         { id: "firstName", label: "Nombre", placeholder: "Ana" },
-        { id: "lastName", label: "Apellido", placeholder: "García" },
+        { id: "lastName", label: "Apellido", placeholder: "GarcÃ­a" },
         { id: "email", label: "Correo", type: "email", placeholder: "ana@restaurante.com" },
         { id: "role", label: "Rol", type: "select", defaultValue: "EMPLOYEE", options: ROLE_OPTIONS },
       ],
-      submitLabel: "Enviar invitación",
+      submitLabel: "Enviar invitaciÃ³n",
       success: {
-        title: "Invitación enviada",
-        description: "Recibirán un correo para unirse a tu espacio.",
+        title: "InvitaciÃ³n enviada",
+        description: "RecibirÃ¡n un correo para unirse a tu espacio.",
       },
     },
     edit: (itemLabel) => ({
@@ -997,8 +997,8 @@ export const FORM_SCHEMAS = {
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar a ${itemLabel}?`,
-      description: "Perderá acceso a este restaurante.",
+      title: `Â¿Eliminar a ${itemLabel}?`,
+      description: "PerderÃ¡ acceso a este restaurante.",
       success: deleteSuccess(itemLabel, "el equipo"),
     }),
   },
@@ -1007,7 +1007,7 @@ export const FORM_SCHEMAS = {
     add: {
       title: "Agregar campo de perfil",
       fields: [
-        { id: "label", label: "Etiqueta", placeholder: "Teléfono del local" },
+        { id: "label", label: "Etiqueta", placeholder: "TelÃ©fono del local" },
         {
           id: "fieldType",
           label: "Tipo",
@@ -1016,14 +1016,14 @@ export const FORM_SCHEMAS = {
           options: [
             { value: "text", label: "Texto" },
             { value: "email", label: "Correo" },
-            { value: "phone", label: "Teléfono" },
-            { value: "number", label: "Número" },
+            { value: "phone", label: "TelÃ©fono" },
+            { value: "number", label: "NÃºmero" },
           ],
         },
         { id: "defaultValue", label: "Valor predeterminado", placeholder: "Opcional" },
       ],
       submitLabel: "Agregar campo",
-      success: { title: "Campo agregado", description: "Aparecerá en el perfil del espacio." },
+      success: { title: "Campo agregado", description: "AparecerÃ¡ en el perfil del espacio." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
@@ -1036,8 +1036,8 @@ export const FORM_SCHEMAS = {
           options: [
             { value: "text", label: "Texto" },
             { value: "email", label: "Correo" },
-            { value: "phone", label: "Teléfono" },
-            { value: "number", label: "Número" },
+            { value: "phone", label: "TelÃ©fono" },
+            { value: "number", label: "NÃºmero" },
           ],
         },
         { id: "defaultValue", label: "Valor predeterminado" },
@@ -1046,7 +1046,7 @@ export const FORM_SCHEMAS = {
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ${itemLabel}?`,
+      title: `Â¿Eliminar ${itemLabel}?`,
       success: deleteSuccess(itemLabel, "el perfil"),
     }),
   },
@@ -1056,21 +1056,21 @@ export const FORM_SCHEMAS = {
       title: "Agregar endpoint",
       fields: [
         { id: "name", label: "Nombre", placeholder: "API principal" },
-        { id: "url", label: "URL base", placeholder: "https://api.tablemetrics.com" },
+        { id: "url", label: "URL base", placeholder: "https://api.personalmetrics.com" },
         {
           id: "environment",
           label: "Entorno",
           type: "select",
           defaultValue: "production",
           options: [
-            { value: "production", label: "Producción" },
+            { value: "production", label: "ProducciÃ³n" },
             { value: "staging", label: "Staging" },
             { value: "development", label: "Desarrollo" },
           ],
         },
       ],
       submitLabel: "Guardar endpoint",
-      success: { title: "Endpoint guardado", description: "Las integraciones usarán esta URL base." },
+      success: { title: "Endpoint guardado", description: "Las integraciones usarÃ¡n esta URL base." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
@@ -1082,7 +1082,7 @@ export const FORM_SCHEMAS = {
           label: "Entorno",
           type: "select",
           options: [
-            { value: "production", label: "Producción" },
+            { value: "production", label: "ProducciÃ³n" },
             { value: "staging", label: "Staging" },
             { value: "development", label: "Desarrollo" },
           ],
@@ -1092,15 +1092,15 @@ export const FORM_SCHEMAS = {
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Eliminar ${itemLabel}?`,
-      description: "Las integraciones dejarán de usar este endpoint.",
+      title: `Â¿Eliminar ${itemLabel}?`,
+      description: "Las integraciones dejarÃ¡n de usar este endpoint.",
       success: deleteSuccess(itemLabel, "endpoints"),
     }),
   },
 
   settingsIntegration: {
     add: {
-      title: "Agregar integración",
+      title: "Agregar integraciÃ³n",
       fields: [
         { id: "name", label: "Nombre", placeholder: "Square POS" },
         {
@@ -1115,11 +1115,11 @@ export const FORM_SCHEMAS = {
             { value: "custom", label: "Personalizado" },
           ],
         },
-        { id: "apiKey", label: "Clave API", type: "password", placeholder: "••••••••" },
+        { id: "apiKey", label: "Clave API", type: "password", placeholder: "â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" },
         { id: "webhookUrl", label: "Webhook (opcional)", placeholder: "https://..." },
       ],
-      submitLabel: "Conectar integración",
-      success: { title: "Integración conectada", description: "Empezará a sincronizar datos según la configuración." },
+      submitLabel: "Conectar integraciÃ³n",
+      success: { title: "IntegraciÃ³n conectada", description: "EmpezarÃ¡ a sincronizar datos segÃºn la configuraciÃ³n." },
     },
     edit: (itemLabel) => ({
       title: `Editar ${itemLabel}`,
@@ -1139,14 +1139,14 @@ export const FORM_SCHEMAS = {
         { id: "apiKey", label: "Clave API", type: "password" },
         { id: "webhookUrl", label: "Webhook (opcional)" },
       ],
-      submitLabel: "Actualizar integración",
+      submitLabel: "Actualizar integraciÃ³n",
       success: editSuccess(itemLabel),
     }),
     delete: (itemLabel) => ({
-      title: `¿Desconectar ${itemLabel}?`,
-      description: "Dejará de sincronizar datos con TableMetrics.",
+      title: `Â¿Desconectar ${itemLabel}?`,
+      description: "DejarÃ¡ de sincronizar datos con PersonalMetrics.",
       confirmLabel: "Desconectar",
-      success: { title: "Integración desconectada", description: `${itemLabel} ya no envía datos.` },
+      success: { title: "IntegraciÃ³n desconectada", description: `${itemLabel} ya no envÃ­a datos.` },
     }),
   },
   menuItem: {
@@ -1206,7 +1206,7 @@ export const FORM_SCHEMAS = {
       },
     },
     edit: (itemLabel) => ({
-      title: `Edit chart point — ${itemLabel}`,
+      title: `Edit chart point â€” ${itemLabel}`,
       fields: [
         { id: "name", label: "Dish name", defaultValue: itemLabel, fullWidth: true },
         { id: "price", label: "Menu price", type: "number", min: "0", step: "0.01" },
@@ -1269,15 +1269,15 @@ const EDIT_FALLBACKS = {
   phone: "+1 (555) 201-4490",
   products: "Productos frescos y suministros",
   paymentTerms: "30",
-  url: "https://api.tablemetrics.com",
-  webhookUrl: "https://bistronorte.com/api/webhooks/tablemetrics",
-  apiKey: "tm_live_demo_key",
+  url: "https://api.personalmetrics.com",
+  webhookUrl: "https://bistronorte.com/api/webhooks/personalmetrics",
+  apiKey: "pm_live_demo_key",
   date: "2026-06-09",
   due: "2026-06-30",
   expiresOn: "2026-08-15",
   effectiveDate: "2026-06-09",
-  message: "Revisar este registro y tomar acción antes del próximo cierre.",
-  description: "Configuración operativa del restaurante.",
+  message: "Revisar este registro y tomar acciÃ³n antes del prÃ³ximo cierre.",
+  description: "ConfiguraciÃ³n operativa del restaurante.",
   notes: "Revisado por gerencia.",
   note: "Dato validado contra el cierre mensual.",
   body: "Los resultados se mantienen dentro del rango esperado.",
@@ -1285,13 +1285,13 @@ const EDIT_FALLBACKS = {
 };
 
 const SAMPLE_EDIT_ITEMS = {
-  dashboardKpi: { title: "Ingresos netos", value: "$42,850", hint: "Resultado después de gastos operativos." },
+  dashboardKpi: { title: "Ingresos netos", value: "$42,850", hint: "Resultado despuÃ©s de gastos operativos." },
   inventorySeries: { label: "Parmigiano", onHand: 5, par: 8 },
   inventoryIngredient: { name: "Parmigiano Reggiano", quantity: 5, unit: "kg", reorderAt: 8, unitCost: 38.5, expiresOn: "2026-06-20" },
   supplierActiveSummary: { name: "Meta de proveedores", targetCount: 12, notes: "Priorizar proveedores locales." },
   supplierPayableSummary: { name: "Cuentas por pagar", periodDays: 30, alertThreshold: 10000 },
   supplierReminderSummary: { name: "Recordatorios de reorden", lookaheadDays: 14, minAlerts: 3 },
-  breakEvenFixedCost: { name: "Renta del local", monthlyAmount: 12000, category: "Operación" },
+  breakEvenFixedCost: { name: "Renta del local", monthlyAmount: 12000, category: "OperaciÃ³n" },
   breakEvenVariable: { name: "Costo de alimentos", percentage: 38 },
   breakEvenRevenueRule: { name: "Meta entre semana", dailyTarget: 3300, notes: "Aplicar de lunes a jueves." },
   breakEvenTicket: { name: "Ticket promedio", avgTicket: 40, ordersPerDay: 61 },
@@ -1300,11 +1300,11 @@ const SAMPLE_EDIT_ITEMS = {
   forecastUsageRule: { name: "Consumo de ingredientes", percentage: 36 },
   forecastAnomalyRule: { name: "Ingredientes", category: "INGREDIENTS", stdDevThreshold: 2, notifyEmail: "gerencia@bistronorte.com" },
   analyticsMarginNote: { title: "Margen estable en Q2", body: "El margen se mantuvo por encima del objetivo.", month: "Jun" },
-  analyticsObservation: { title: "Gastos bajo control", body: "Los gastos crecieron más lento que los ingresos." },
+  analyticsObservation: { title: "Gastos bajo control", body: "Los gastos crecieron mÃ¡s lento que los ingresos." },
   analyticsPolicy: { name: "Pagos a proveedores", description: "Agrupar pagos cada jueves.", effectiveDate: "2026-06-09" },
   analyticsTrendPoint: { month: "Jun", margin: 23.3, note: "Mejora por ajuste de precios." },
-  settingsProfileField: { label: "Teléfono del local", fieldType: "phone", defaultValue: "+1 (555) 010-2200" },
-  settingsIntegration: { name: "Square POS", provider: "square", apiKey: "tm_live_demo_key", webhookUrl: "https://bistronorte.com/api/webhooks/tablemetrics" },
+  settingsProfileField: { label: "TelÃ©fono del local", fieldType: "phone", defaultValue: "+1 (555) 010-2200" },
+  settingsIntegration: { name: "Square POS", provider: "square", apiKey: "pm_live_demo_key", webhookUrl: "https://bistronorte.com/api/webhooks/personalmetrics" },
   menuItem: { name: "Risotto de hongos silvestres", price: 26, ingredientCost: 7.2, popularity: 88 },
   menuChartPoint: { name: "Risotto de hongos silvestres", price: 26, ingredientCost: 7.2, marginPct: 72, popularity: 88 },
 };
@@ -1318,7 +1318,7 @@ const DELETE_CONFIRM_LABELS = {
   alert: "Eliminar alerta",
   dashboardKpi: "Eliminar indicador",
   dashboardMonth: "Eliminar mes",
-  dashboardCategory: "Eliminar categoría",
+  dashboardCategory: "Eliminar categorÃ­a",
   dashboardInventoryAlert: "Eliminar alerta",
   dashboardPaymentReminder: "Eliminar recordatorio",
   breakEvenFixedCost: "Eliminar costo",
@@ -1332,8 +1332,8 @@ const DELETE_CONFIRM_LABELS = {
   forecastUsageRule: "Eliminar regla",
   forecastAnomalyRule: "Eliminar regla",
   analyticsMarginNote: "Eliminar nota",
-  analyticsObservation: "Eliminar observación",
-  analyticsPolicy: "Eliminar política",
+  analyticsObservation: "Eliminar observaciÃ³n",
+  analyticsPolicy: "Eliminar polÃ­tica",
   analyticsMonth: "Eliminar mes",
   analyticsTrendPoint: "Quitar punto",
   settingsTeamMember: "Eliminar miembro",
@@ -1446,7 +1446,7 @@ export const PROFILE_FIELDS = [
 ];
 
 export const PASSWORD_FIELDS = [
-  { id: "currentPassword", label: "Contraseña actual", type: "password", required: true, fullWidth: true, autoComplete: "current-password" },
-  { id: "newPassword", label: "Nueva contraseña", type: "password", required: true, autoComplete: "new-password", helperText: "Usa al menos 8 caracteres, una mayúscula y un número." },
-  { id: "confirmPassword", label: "Confirmar contraseña", type: "password", required: true, autoComplete: "new-password" },
+  { id: "currentPassword", label: "ContraseÃ±a actual", type: "password", required: true, fullWidth: true, autoComplete: "current-password" },
+  { id: "newPassword", label: "Nueva contraseÃ±a", type: "password", required: true, autoComplete: "new-password", helperText: "Usa al menos 8 caracteres, una mayÃºscula y un nÃºmero." },
+  { id: "confirmPassword", label: "Confirmar contraseÃ±a", type: "password", required: true, autoComplete: "new-password" },
 ];

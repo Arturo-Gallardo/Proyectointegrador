@@ -1,4 +1,4 @@
-export const APP_NAME = "Mi Dinero";
+export const APP_NAME = "PersonalMetrics";
 export const APP_TAGLINE = "Finanzas personales";
 
 export const ROLE_LABELS = {
@@ -20,7 +20,7 @@ export const INCOME_CHANNEL_LABELS = {
   DINE_IN: "Sueldo",
   TAKEOUT: "Trabajo independiente",
   DELIVERY: "Rendimientos",
-  CATERING: "Venta de artículos",
+  CATERING: "Venta de artÃ­culos",
   OTHER: "Otro ingreso",
 };
 
@@ -39,7 +39,7 @@ export const ALERT_TYPE_LABELS = {
 };
 
 export const SEVERITY_LABELS = {
-  critical: "Crítico",
+  critical: "CrÃ­tico",
   warning: "Advertencia",
-  info: "Información",
+  info: "InformaciÃ³n",
 };
