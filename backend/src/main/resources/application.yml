@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: untitled-api
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:untitled}
+    username: ${DB_USER:untitled}
+    password: ${DB_PASSWORD:untitled}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8080
+
+jwt:
+  secret: ${JWT_SECRET:change-me-use-at-least-thirty-two-characters-long-secret}
+  expiration-ms: 86400000
+
+logging:
+  level:
+    org.hibernate.SQL: warn
